@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="mysql-jdbc">
+    <CLASSES>
+      <root url="jar://E:/mysql-jdbc.jar!/" />
+      <root url="jar://F:/app/client/ojdbc6.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

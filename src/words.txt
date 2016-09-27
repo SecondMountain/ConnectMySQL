@@ -1,0 +1,15 @@
+#include<stdio.h>
+int main(){
+	int number = 10;
+	int move = 5;
+	float up = 3.2L;
+	char ch;
+	scanf("%d",&number);
+	scanf("%c",&ch);
+	printf("%d",number);
+	printf("%c",char);
+	if (false){}
+	else{}
+	while(true){}
+return 0;
+}
