@@ -29,6 +29,8 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
+import static Print.Print.println;
+
 /**
  * File for HSSF testing/examples
  *
@@ -216,11 +218,40 @@ public final class HSSFReadWrite {
 			e.printStackTrace();
 		}
 	}
+
+	/**
+	 * 是xls文件返回0；
+	 * 是xlsx文件返回1；
+	 * 两者都不是返回-1；
+	 * @param fileName
+	 * @return
+     */
+	private static int whichFile(String fileName){
+		int length = fileName.length();
+		int index =fileName.lastIndexOf(".");
+		if (index!=-1){
+			if (length-index==4)
+				return 0;
+			if (length-index ==5)
+				return 1;
+		}
+		return -1;
+	}
 	public static void main(String[] args) {
 		String fileName = "src/ReadExcel/ano.xls";
-		startReadXlsFile(fileName);
+//		startReadXlsFile(fileName);
 		String name ="src/ReadExcel/ABC产品_13条.xlsx";
-		startReadXlsxFile(name);
+//		startReadXlsxFile(name);
+		String str=".ano.xlsx";
+		if (whichFile(str)==0){
+			println("是xls");
+		}
+		else if (whichFile(str)==1){
+			println("xlsx");
+		}
+		else
+			println("all not");
+
 
 	}
 }
