@@ -238,10 +238,10 @@ public final class HSSFReadWrite {
 		return -1;
 	}
 	public static void main(String[] args) {
-		String fileName = "src/ReadExcel/ano.xls";
-//		startReadXlsFile(fileName);
-		String name ="src/ReadExcel/ABC产品_13条.xlsx";
-//		startReadXlsxFile(name);
+		String fileName = "src/ReadExcel/ano.xls";	//only can read xls file
+		startReadXlsFile(fileName);
+		String name ="src/ReadExcel/ABC产品_13条.xlsx";	//only can read xlsx file
+		startReadXlsxFile(name);
 		String str=".ano.xlsx";
 		if (whichFile(str)==0){
 			println("是xls");
