@@ -1,3 +1,5 @@
+package Log;
+
 import org.apache.log4j.Logger;
 
 import java.util.regex.Matcher;
@@ -9,7 +11,17 @@ import static Print.Print.println;
  * Created by zyf on 2016/9/27.
  */
 public class Log4jTest {
-    public static Logger logger = Logger.getLogger(Regex.class);
+    public static Logger logger;
+
+    public Log4jTest(Class clazz) {
+        logger = Logger.getLogger(Log4jTest.class);
+    }
+    public void debug(String info){
+        logger.debug(info);
+    }
+    public void info(String info){logger.info(info);}
+    public void error(String info){logger.error(info);}
+    public void warn(String info){logger.warn(info);}
     public static void main(String[] args) {
         //TODO write your code here
         Pattern pattern = Pattern.compile("[0-9]");
