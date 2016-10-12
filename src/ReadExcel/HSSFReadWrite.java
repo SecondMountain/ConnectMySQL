@@ -26,6 +26,7 @@ import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
@@ -91,7 +92,6 @@ public final class HSSFReadWrite {
 			if ((rownum % 2) == 0) {
 				r.setHeight((short) 0x249);
 			}
-
 			for (int cellnum = 0; cellnum < 50; cellnum += 2) {
 				HSSFCell c = r.createCell(cellnum);
 				c.setCellValue(rownum * 10000 + cellnum
@@ -108,7 +108,6 @@ public final class HSSFReadWrite {
 				}
 			}
 		}
-
 		// draw a thick black border on the row at the bottom using BLANKS
 		rownum++;
 		rownum++;
@@ -126,7 +125,6 @@ public final class HSSFReadWrite {
 		wb.createSheet();
 		wb.setSheetName(1, "DeletedSheet");
 		wb.removeSheetAt(1);
-
 		// end deleted sheet
 		FileOutputStream out = new FileOutputStream(outputFilename);
 		try {
@@ -134,7 +132,6 @@ public final class HSSFReadWrite {
 		} finally {
 		    out.close();
 		}
-		
 		wb.close();
 	}
 
@@ -236,6 +233,20 @@ public final class HSSFReadWrite {
 				return 1;
 		}
 		return -1;
+	}
+	public void read(String fileName){
+		if (whichFile(fileName)==0){
+			startReadXlsFile(fileName);
+		}
+		else if (whichFile(fileName)==1){
+			startReadXlsxFile(fileName);
+		}
+		else
+			try {
+				throw new FileNotFoundException("文件输入错误，请检查文件类型");
+			} catch (FileNotFoundException e) {
+				e.printStackTrace();
+			}
 	}
 	public static void main(String[] args) {
 		String fileName = "src/ReadExcel/ano.xls";	//only can read xls file

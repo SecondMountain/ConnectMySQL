@@ -10,14 +10,17 @@ public class DataReader {
     public DataReader() {
 
     }
-    public static void readFile(String fileName){
+    public static byte[] readFile(String fileName){
         try {
             File file = new File(fileName);
             DataInputStream dataInputStream = new DataInputStream(new FileInputStream(file));
-            int c;
-            while (( c=dataInputStream.read() )!= -1){
-                print((char)c);
-            }
+            byte[] data =new byte[dataInputStream.available()];
+            dataInputStream.read(data);
+            return data;
+//            int c;
+//            while (( c=dataInputStream.read() )!= -1){
+//                print((char)c);
+//            }
 //            while (dataInputStream.available()!=0){
 //                print((char)dataInputStream.readByte());
 //            }
@@ -27,9 +30,12 @@ public class DataReader {
         catch (IOException e){
             e.printStackTrace();
         }
+        return null;
     }
     public static void main(String[] args){
-        readFile("src/IO/Byte/DataReader.java");
+        byte[] data=readFile("src/IO/Byte/DataReader.java");
+        for (byte c:data)
+            print((char)c);
     }
 
 }

@@ -10,11 +10,11 @@ import static Print.Print.println;
 /**
  * Created by zyf on 2016/9/27.
  */
-public class Log4jTest {
+public class Log4j {
     public static Logger logger;
 
-    public Log4jTest(Class clazz) {
-        logger = Logger.getLogger(Log4jTest.class);
+    public Log4j(Class clazz) {
+        logger = Logger.getLogger(Log4j.class);
     }
     public void debug(String info){
         logger.debug(info);
