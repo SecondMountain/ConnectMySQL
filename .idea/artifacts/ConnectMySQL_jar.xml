@@ -1,0 +1,11 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="ConnectMySQL:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/ConnectMySQL_jar</output-path>
+    <root id="archive" name="ConnectMySQL.jar">
+      <element id="module-output" name="ConnectMySQL" />
+      <element id="extracted-dir" path="E:/mysql-jdbc.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="F:/app/client/ojdbc6.jar" path-in-jar="/" />
+      <element id="library" level="application" name="JDK" />
+    </root>
+  </artifact>
+</component>

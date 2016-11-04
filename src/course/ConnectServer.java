@@ -6,7 +6,7 @@ import java.net.Socket;
  * Created by zyf on 2016/4/13.
  */
 public class ConnectServer {
-    private static final String URL = "http://127.0.0.1:8081";
+    private static final String URL = "localhost/127.0.0.1";
     private static final int PORT = 8081;
     private static Socket socket;
     private static InputStream in;

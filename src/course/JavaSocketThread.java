@@ -22,12 +22,13 @@ public class JavaSocketThread extends Thread{
         try {
             while (true){
                 String str= in.readLine();
-                String[]  split = str.split(" |/|\\?|&");
+//                String[]  split = str.split(" |/|\\?|&");
                 //分割之后以第四个为起点进行获取参数值等，，，
                 //不要获取错了咩，，，，
-                System.out.println("enchoing "+split[3]);
+                System.out.println("enchoing "+str);
                 out.println(str);
                 out.write(str);
+                out.flush();
                 break;
             }
         }catch (IOException e){}
@@ -40,7 +41,6 @@ public class JavaSocketThread extends Thread{
     }
 
     public static void main(String[] args)throws IOException {
-        //TODO write your code here
         ServerSocket serverSocket =  new ServerSocket(PORT);
         System.out.println("server started");
         try{
@@ -48,6 +48,7 @@ public class JavaSocketThread extends Thread{
                 Socket socket = serverSocket.accept();
                 try{
                     new JavaSocketThread(socket);
+
                 }catch (IOException e){
                     socket.close();
                 }

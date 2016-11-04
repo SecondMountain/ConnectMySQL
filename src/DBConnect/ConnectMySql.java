@@ -21,17 +21,17 @@ public class ConnectMySql {
     private PreparedStatement ps = null;
     private Statement st;
     private String updateSql;
-    private String querySql;
     private ResultSet rs;
 
     public ConnectMySql() {
-        this.url = "jdbc:mysql://localhost/zyf";
+        this.url = "jdbc:mysql://localhost/zyf?characterEncoding=utf8";
         this.user = "root";
         this.password = "qq125680";
+        getConnnect(url,user,password);
     }
 
     public ConnectMySql(String ip, String dataBase, String user, String password){
-        this.url = "jdbc:mysql://"+ip+"/"+dataBase;
+        this.url = "jdbc:mysql://"+ip+"/"+dataBase+"?characterEncoding=utf8";
         this.user = user;
         this.password = password;
         getConnnect(url,user,password);
@@ -132,14 +132,6 @@ public class ConnectMySql {
 
     public void setUpdateSql(String updateSql) {
         this.updateSql = updateSql;
-    }
-
-    public String getQuerySql() {
-        return querySql;
-    }
-
-    public void setQuerySql(String querySql) {
-        this.querySql = querySql;
     }
     public void getTableColumns(String tableName){
         try {

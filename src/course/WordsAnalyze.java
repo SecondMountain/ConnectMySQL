@@ -55,10 +55,10 @@ public class WordsAnalyze {
      *  &   41
      */
     //key words
-    public static String[] words = {"int","char","float","void","const","if","else","do","while",
+    public static String[] words ={"int","char","float","void","const","if","else","do","while",
         "scanf","printf","return","main","read"};
 
-    public static void main(String[] args)throws IOException {
+    public static void main(String[] args)throws IOException{
         //TODO write your code here
 //        InputStreamReader in = new InputStreamReader(new FileInputStream("src/course/WordsAnalyze.java"));
         InputStreamReader in = new InputStreamReader(new ByteArrayInputStream(remove(read("src/words.txt")).getBytes()));
